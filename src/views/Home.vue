@@ -1,18 +1,47 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home" @scroll="handleScroll">
+    <topbar/>
+    <intro/>
+    <cont :scroll="scroll"/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import topbar from '@/components/Top-bar.vue';
+import intro from '@/components/Intro.vue';
+import cont from '@/components/Content.vue';
+import $ from 'jquery';
 
 export default {
-  name: 'Home',
+  data() {
+    return {
+      scroll: 2
+    }
+  },
   components: {
-    HelloWorld,
+    topbar,
+    cont,
+    intro,
+  },
+  methods: {
+    handleScroll: function() {
+      this.scroll = $('.home').scrollTop()
+    }
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.home {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  background: white;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+</style>
