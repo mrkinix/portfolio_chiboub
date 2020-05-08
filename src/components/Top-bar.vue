@@ -75,6 +75,14 @@ export default {
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .mobile {
+    display: block !important;
+  }
+  ul {
+    display: none !important
+  }
+}
 .mobile {
   display: none;
 }

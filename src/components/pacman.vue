@@ -1,7 +1,7 @@
 <template>
-  <div class="pacman">
+  <div class="pacman" :style="{opacity: visib}">
     <div class="char--container">
-      <div :style="{transform: `translateX(${x}vw)`}" >
+      <div class="char--width" :style="{transform: `translateX(calc(${x}px + ${X}rem + ${x0}px))`}" >
         <img :style="{transform: `scaleX(${direction})`}" 
             :src="require(`@/assets/${state}.png`)">
         <img :style="{transform: `scaleX(${direction})`}" 
@@ -21,24 +21,34 @@ export default {
     props: ['start'],
     data() {
         return {
-            x: -35,
+            x: 0,
+            X: 0,
+            x0: 0,
+            visib: 0,
             direction: 1,
             state: 'monster'
         }
     },
+    mounted() {
+        this.x = - $('.char--width').width()
+    },
     watch: {
         start: async function() {
-            for (let i = 0; i < 70; ++i) {
-                this.x += 2
-                await delay(30)
+            this.visib = 1;
+            for (let i = 0; i < 60; ++i) {
+                this.X += 2.5
+                this.x0 -= this.x / 60
+                await delay(45)
             }
             await delay(100)
             this.direction = -1
             this.state = 'vulnerable'
-            for (let i = 0; i < 80; ++i) {
-                this.x -= 2
-                await delay(30)
+            for (let i = 0; i < 60; ++i) {
+                this.X -= 2.5
+                this.x0 += this.x / 60
+                await delay(45)
             }
+            this.visib = 0;
         }
     },
 }
@@ -46,9 +56,9 @@ export default {
 
 <style lang="scss" scoped>
 img {
-    height: 7vh;
-    width: auto;
-    padding-right: 10vw;
+    height: auto;
+    width: 7vh;
+    padding-right: 10rem;
 }
 
 .char--container {
@@ -56,7 +66,7 @@ img {
 }
 .pacman {
     padding-top: 10vh;
-    width: 100vw;
+    width: auto;
     height: 7vh;
 }
 </style>

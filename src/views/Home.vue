@@ -41,7 +41,7 @@ export default {
   margin: 0;
   overflow: scroll;
   overflow-x: hidden;
-  background: white;
+  background: rgb(41, 41, 41);
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 </style>
