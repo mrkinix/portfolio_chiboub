@@ -44,4 +44,14 @@ export default {
   background: rgb(41, 41, 41);
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
+@media screen and (max-width: 1032px) {
+  .home {
+    height: calc(100% + 44px);
+  }
+  html, body {
+  overflow-x: hidden;
+
+  }
+
+}
 </style>

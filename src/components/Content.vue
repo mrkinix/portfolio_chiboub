@@ -1,11 +1,11 @@
 <template>
   <div class="content">
     <h1>Timeline</h1>
+    <div class="line" />
     <h2>How I learned programming.</h2>
     <div class="parent">
       <div style="line-height: 44px">{{ state }}</div>
     </div>
-    <div class="line" />
     <div class="container">
       <div :style="{opacity: opacity }" class="hello-world"
       :src="require('@/assets/iphonex.png')">
@@ -60,10 +60,8 @@
       </section>
       <a class="github">Check my github page for open source projects ></a>
     </div>
-    <div class="projects">
-      <!-- Programmatically animate guy using cmd -->
-      <!-- Are you familiar with terminals? Try exploring it by clicking below. -->
-    </div>
+
+    <projects :scroll="scroll"/>
   </div>
 </template>
 
@@ -71,10 +69,12 @@
 import $ from "jquery";
 import delay from "delay";
 import pacman from "@/components/pacman";
+import projects from "./Projects";
 
 export default {
   components: {
-    pacman
+    pacman,
+    projects,
   },
   data() {
     return {
@@ -109,7 +109,7 @@ export default {
         this.state = "2020 - Now...";
       }
       if ($(".projects").offset().top < 44) {
-        this.state = "";
+        this.state = "‌‌ ";
       }
     }
   }
@@ -152,8 +152,8 @@ h2 {
   position: sticky;
   top: 0;
   color: black;
-  width: 20vw;
-  left: 40vw;
+  width: 100%;
+  pointer-events: none;
   z-index: 9999;
   font-size: 20px;
 }
@@ -303,7 +303,8 @@ a {
     height: auto;
     color: white;
     background: linear-gradient(to top, rgb(10, 19, 31), #000000);
-    padding: 30vh 0;
+    padding: 10vh 0;
+    font-size: 22px;
     section {
         position: relative;
         left: calc(75rem - 40vw);
@@ -318,9 +319,4 @@ a {
     width: 80vw;
 }
 
-.projects {
-  width: 100%;
-  height: 100vh;
-  background: #c1c1c1;
-}
 </style>
