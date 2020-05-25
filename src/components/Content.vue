@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" id="tlc">
     <h1>Timeline</h1>
     <div class="line" />
     <h2>How I learned programming.</h2>
@@ -7,8 +7,7 @@
       <div style="line-height: 44px">{{ state }}</div>
     </div>
     <div class="container">
-      <div :style="{opacity: opacity }" class="hello-world"
-      :src="require('@/assets/iphonex.png')">
+      <div :style="{opacity: opacity }" class="hello-world">
         > Hello world!▮
       </div>
       <section :style="{ opacity: opacity }">
@@ -35,9 +34,10 @@
         horizons and learned many other cool stuff. At the same time, I learned node and built some
         apps with express and mongoose. I also learned Python and used it different times to
         automate tasks.
-        <a>My Node apps ></a>
+        <br/><br/><br/><br/>
+        <!-- <a>My Node apps ></a>
         <a>My Python apps ></a>
-        <a>My Vue apps ></a>
+        <a>My Vue apps ></a> -->
       </section>
       <div class="part2" style="display: flex; padding: 0 0 5vh 0;">
         <section class="text text--left">
@@ -58,7 +58,7 @@
         like C++, python etc... I learned new stuff like redis, scss, numpy, scipy, react, kotlin
         and android development, but my main focus is still web dev.
       </section>
-      <a class="github">Check my github page for open source projects ></a>
+      <a class="github" href="https://github.com/mrkinix/">Check my github page for open source projects ></a>
     </div>
 
     <projects :scroll="scroll"/>

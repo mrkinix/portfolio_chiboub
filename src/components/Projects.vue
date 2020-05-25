@@ -13,10 +13,10 @@
       <div><h4 class="txt">Coming soon</h4></div>
     </div>
 
-    <h1>About</h1>
+    <h1 class="about">About</h1>
     <div class="line2" />
     <h2>Back again at introducing myself.</h2>
-    <img :style="{opacity: opacity + .9}" :src="require('@/assets/station.png')">
+    <img :style="{opacity: opacity + .9, cursor: 'unset'}" :src="require('@/assets/station.png')">
     <h3>Hey there, I'm a 19 year-old guy from Tunisia,
       I also got a Belgian nationality. I'm currently a high school student (math major).
       And as you guessed, I have a big passion for programming, but I also have other hobbies

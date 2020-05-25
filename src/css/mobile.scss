@@ -6,6 +6,10 @@
         width: calc(80vw - 20rem) !important;
         margin-left: 10rem !important;
     }
+    .container2 {
+        left: 5rem !important;
+        width: calc(80vw - 20rem) !important;
+    }
     .text {
         left: 5rem !important;
     }
@@ -33,7 +37,7 @@
 
 @media screen and (max-width: 1032px) {
     // mobile
-    .container {
+    .container, .container2 {
         display: flex!important;
         flex-direction: column!important;
         padding: 0!important;
@@ -93,6 +97,18 @@
             height: 100vw !important;
             max-width: unset !important;
             max-height: unset !important;
+        }
+    }
+    .cont {
+        width: 98vw !important;
+        height: 98vw !important;
+    }
+    .gb {
+        ul {
+            width: 120vw !important;
+            li:hover {
+                text-decoration: unset !important;
+            }
         }
     }
 }

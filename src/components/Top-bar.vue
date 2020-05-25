@@ -1,17 +1,16 @@
 <template>
-  <div class="top-bar">
-    <h1>Chiboub</h1>
+  <div class="top-bar" :style="{position: pos}">
+    <h1> <router-link class="rl" to="/">Chiboub</router-link></h1>
     <ul class="hide">
-      <li @mouseover="buttonHover(0)" @mouseout="reset(0)">{{links[0]}}</li>
-      <li @mouseover="buttonHover(1)" @mouseout="reset(1)">{{links[1]}}</li>
-      <li @mouseover="buttonHover(2)" @mouseout="reset(2)">{{links[2]}}</li>
+      <li :style="{width: linksInit[0].length + 2 + 'ch'}" @mouseover="buttonHover(0)" @mouseout="reset(0)">
+        <router-link class="rl" to="gallery">{{links[0]}}</router-link></li>
+      <li :style="{width: linksInit[1].length + 2 + 'ch'}" @mouseover="buttonHover(1)" @mouseout="reset(1)" @click="mail">{{links[1]}}</li>
     </ul>
     <ham @dropMenu="openDrop" class="mobile" ref="hamburger"/>
     <div class="dropMenu" v-if="drop">
       <ul>
-        <li>{{links[0]}}</li>
-        <li>{{links[1]}}</li>
-        <li>{{links[2]}}</li>
+        <li><router-link class="rl" style="color: white" to="gallery">{{links[0]}}</router-link></li>
+        <li @click="mail">{{links[1]}}</li>
       </ul>
       <div style="height: 100%" @click="openDrop(2)"></div>
     </div>
@@ -24,16 +23,18 @@ import ham from './hamburger.vue';
 export default {
   data() {
     return {
-      links: ['Blog', 'Gallery', 'Contact'],
+      linksInit: ['Gallery', 'Contact'],
+      links: ['Gallery', 'Contact'],
       drop: false
     }
   },
+  props: ['pos'],
   components: {
     ham,
   },
   methods: {
-    test: function() {
-      alert('a')
+    mail: function() {
+      window.location.href = 'mailto:chiboub213@gmail.com'
     },
     openDrop: function(state=0) {
       if (state === 1) this.drop = true
@@ -63,7 +64,7 @@ export default {
   left: 0;
   height: 44px;
   width: 100%;
-  z-index: 999;
+  z-index: 9999;
   background: rgba(240,240,240, .8);
   display: inline-flex;
   justify-content: space-between;
@@ -85,10 +86,8 @@ export default {
     justify-content: space-between;
     li {
       list-style-type: none;
-      margin-left: 20px;
       font-size: 17px;
       cursor: pointer;
-      width: 10ch;
       text-align: right;
       &:hover {
         color: rgb(41, 41, 41);
@@ -98,6 +97,7 @@ export default {
   .dropMenu {
     position: fixed;
     top: 44px;
+    padding-top: 10%;
     left: 0;
     height: calc(100% - 44px);
     width: 100%;
@@ -124,6 +124,10 @@ export default {
         }
       }
     }
+  }
+  .rl {
+    color: black;
+    text-decoration: none;
   }
 }
 @media screen and (max-width: 500px) {

@@ -8,15 +8,23 @@
         You can find more
         about me below.
       </h3>
-      <a>Timeline</a>
-      - <a>Projects</a>
-      - <a>About</a>
+      <a @click="scroll('#tlc')">Timeline</a>
+      - <a @click="scroll('.projects')">Projects</a>
+      - <a @click="scroll('.about')">About</a>
     </div>
     </div>
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
+  methods: {
+    scroll: function(e) {
+      $('.home').animate({
+        scrollTop: $(e).offset().top
+      }, 400);
+    }
+  },
 }
 </script>
 
