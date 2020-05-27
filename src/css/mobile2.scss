@@ -1,0 +1,23 @@
+@media screen and (min-width: 150rem) {
+    // big screen
+
+}
+
+@media only screen and (max-width: 768px) {
+    // mobile
+    .container {
+        flex-direction: column !important;
+    }
+    .btn--container {
+        justify-content: center !important;
+    }
+    .categ, .latest {
+        width: 90% !important;
+        margin-bottom: calc(10vh - 22px) !important;
+    }
+    .latest {
+        margin-top: 0 !important;
+        margin-left: 5% !important;
+    }
+
+}

@@ -31,7 +31,8 @@ export default {
 <style lang="scss" scoped>
 .intro {
   margin: 0;
-  background: rgb(14, 14, 14);
+  background: linear-gradient(to left, rgb(238, 255, 0), red);
+  background: linear-gradient(to left, rgb(255, 175, 1), rgb(255, 3, 3));
   height: 30rem;
   width: 150rem;
   position: relative;

@@ -1,6 +1,7 @@
 <template>
   <div class="content" id="tlc">
-    <h1>Timeline</h1>
+    <projects :scroll="scroll"/>
+    <h1 style="padding-top: 15vh;">Timeline</h1>
     <div class="line" />
     <h2>How I learned programming.</h2>
     <div class="parent">
@@ -11,8 +12,7 @@
         > Hello world!▮
       </div>
       <section :style="{ opacity: opacity }">
-        In 2017 I started learning programming via an app called Solo learn. Since I didn't have
-        access to my computer I had to learn using my phone.
+        In 2017 I started learning programming.
       </section>
     </div>
     <h3>Hence I learned programming basics and some C++.</h3>
@@ -29,27 +29,17 @@
     </div>
     <div class="vue">
       <section class="text">
-        2019 was when I've discovered the world of web dev. I learned the basics of html, css,
+        Summer 2018 was when I've discovered the world of web dev. I learned the basics of html, css,
         git and javascript then jumped into Vue Js. And from there, I eventually expanded my
         horizons and learned many other cool stuff. At the same time, I learned node and built some
         apps with express and mongoose. I also learned Python and used it different times to
         automate tasks.
-        <br/><br/><br/><br/>
-        <!-- <a>My Node apps ></a>
+        <br/><br/><br/>
+        <a>My Node apps ></a>
         <a>My Python apps ></a>
-        <a>My Vue apps ></a> -->
+        <a>My Vue apps ></a>
+        <br/><br/><br/>
       </section>
-      <div class="part2" style="display: flex; padding: 0 0 5vh 0;">
-        <section class="text text--left">
-          Later that year, while I was googling an error I got using Python, I got a random invitation
-          from Google to play 'Google foo-bar', it's a game with different programming challenges.
-          It was the first time I stumble upon that kind of problems, never knew that algorithms did
-          matter. I found my way to solve those problems with no prior study of algorithms but my
-          code was lacking performance and efficiency. Since then I started giving more attention to
-          the theoretical part of computer science and trying to improve my code.
-        </section>
-        <img style="width: 30vw; height: auto" :src="require('@/assets/foobar.jpeg')" />
-      </div>
     </div>
     <div class="now">
       <section style="padding-bottom: 5vh">
@@ -59,9 +49,9 @@
         and android development, but my main focus is still web dev.
       </section>
       <a class="github" href="https://github.com/mrkinix/">Check my github page for open source projects ></a>
+        <br/><br/><br/>
     </div>
 
-    <projects :scroll="scroll"/>
   </div>
 </template>
 
@@ -121,7 +111,6 @@ export default {
 
 .content {
   margin: 0;
-  padding-top: 15vh;
   width: 150rem;
   position: relative;
   left: calc(50% - 75rem);
@@ -148,7 +137,6 @@ h2 {
 }
 
 .parent {
-  margin-top: 10vh;
   position: sticky;
   top: 0;
   color: black;
@@ -203,7 +191,7 @@ a {
 }
 
 .container {
-    padding-top: 20rem;
+    padding-top: 10vh;
     position: relative;
     margin-bottom: 10rem;
     display: flex;

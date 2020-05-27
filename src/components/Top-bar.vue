@@ -1,16 +1,24 @@
 <template>
   <div class="top-bar" :style="{position: pos}">
-    <h1> <router-link class="rl" to="/">Chiboub</router-link></h1>
+    <h1> <router-link class="rl" to="/">
+      Chiboub<span :style="{fontSize: '22px', color: COLOR}">{{PATH}}</span>
+      </router-link></h1>
     <ul class="hide">
       <li :style="{width: linksInit[0].length + 2 + 'ch'}" @mouseover="buttonHover(0)" @mouseout="reset(0)">
-        <router-link class="rl" to="gallery">{{links[0]}}</router-link></li>
+        <router-link class="rl" to="/gallery">{{links[0]}}</router-link></li>
       <li :style="{width: linksInit[1].length + 2 + 'ch'}" @mouseover="buttonHover(1)" @mouseout="reset(1)" @click="mail">{{links[1]}}</li>
+      <li :style="{width: linksInit[2].length + 2 + 'ch'}" @mouseover="buttonHover(2)" @mouseout="reset(2)">
+        <router-link class="rl" to="/notes">{{links[2]}}</router-link></li>
+      <li :style="{width: linksInit[3].length + 2 + 'ch'}" @mouseover="buttonHover(3)" @mouseout="reset(3)">
+        <router-link class="rl" to="/blog">{{links[3]}}</router-link></li>
     </ul>
     <ham @dropMenu="openDrop" class="mobile" ref="hamburger"/>
     <div class="dropMenu" v-if="drop">
       <ul>
-        <li><router-link class="rl" style="color: white" to="gallery">{{links[0]}}</router-link></li>
+        <li><router-link class="rl" style="color: white" to="/gallery">{{links[0]}}</router-link></li>
         <li @click="mail">{{links[1]}}</li>
+        <li><router-link class="rl" style="color: white" to="/notes">{{links[2]}}</router-link></li>
+        <li><router-link class="rl" style="color: white" to="/blog">{{links[3]}}</router-link></li>
       </ul>
       <div style="height: 100%" @click="openDrop(2)"></div>
     </div>
@@ -23,9 +31,11 @@ import ham from './hamburger.vue';
 export default {
   data() {
     return {
-      linksInit: ['Gallery', 'Contact'],
-      links: ['Gallery', 'Contact'],
-      drop: false
+      linksInit: ['Gallery', 'Contact', 'Notes', 'Blog'],
+      links: ['Gallery', 'Contact', 'Notes', 'Blog'],
+      drop: false,
+      COLOR: 'red',
+      PATH: ''
     }
   },
   props: ['pos'],
@@ -54,12 +64,28 @@ export default {
       this.$forceUpdate()
     } 
   },
+  created() {
+    this.PATH = window.location.pathname.slice(1).replace(/\s/g, '');
+    if (this.PATH.includes('notes/')) this.PATH = 'notes'
+    switch(this.PATH) {
+      case 'notes':
+        this.COLOR = '#b86518'
+        break;
+      case 'blog':
+        this.COLOR = '#1885b8'
+        break;
+      case 'gallery':
+        this.COLOR = '#209209'
+        break;
+    }
+    this.$forceUpdate
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .top-bar {
-  position: sticky;
+  position: relative;
   top: 0;
   left: 0;
   height: 44px;
@@ -102,6 +128,7 @@ export default {
     height: calc(100% - 44px);
     width: 100%;
     background: rgba(0, 0, 0, 0.946);
+
     ul {
       width: 100%;
       margin: 0;

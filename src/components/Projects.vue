@@ -21,7 +21,7 @@
       I also got a Belgian nationality. I'm currently a high school student (math major).
       And as you guessed, I have a big passion for programming, but I also have other hobbies
       like playing the guitar, music composition, video/image editing, lifting...
-      I hope you liked my portfolio, have a nice day!
+
     </h3>
   </div>
 </template>

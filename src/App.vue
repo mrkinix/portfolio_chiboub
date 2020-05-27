@@ -12,6 +12,9 @@
   text-align: center;
   color: #2c3e50;
   padding: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
   margin: 0;
 }
 </style>

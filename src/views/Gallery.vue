@@ -105,6 +105,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '../css/mobile.scss';
+@media screen and (max-width: 1032px) {
+  .home {
+    height: calc(100% + 44px) !important;
+  }
+}
 .home {
     position: fixed;
     left: 0;
@@ -119,7 +124,11 @@ export default {
     .img {
         position: relative;
         height: calc(100vh - 44px);
-        background: rgb(23, 23, 23);
+        background: linear-gradient(270deg, #ff5200,#f9aa00,rgb(255, 72, 0));
+        background-size: 800% 800%;
+        -webkit-animation: animated--background 24s ease infinite;
+        -moz-animation: animated--background 24s ease infinite;
+        animation: animated--background 24s ease infinite;
     }
     img {
         height: 100%;
@@ -262,5 +271,20 @@ export default {
             }
         }
     }
+}
+@-webkit-keyframes animated--background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes animated--background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes animated--background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 </style>

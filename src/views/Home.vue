@@ -41,7 +41,7 @@ export default {
   margin: 0;
   overflow: scroll;
   overflow-x: hidden;
-  background: rgb(41, 41, 41);
+  background: rgb(255, 255, 255);
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 @media screen and (max-width: 1032px) {
