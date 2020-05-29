@@ -1,0 +1,95 @@
+.note--container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    background: #373737;
+    overflow-x: hidden;
+}
+
+.content {
+    margin: 0;
+    padding-top: 15vh;
+    width: 150rem;
+    position: relative;
+    min-height: calc(70vh - 44px);
+    background: rgb(17, 17, 17);
+    left: calc(50% - 75rem);
+    color: white;
+    min-height: 100%;
+    height: auto;
+    padding-bottom: 15vh;
+}
+
+h1 {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+h2, h3, h4, p, a {
+    padding: 0 5%;
+}
+
+@media screen and (max-width: 150rem) {
+    .content {
+        width: 100%;
+        position: relative;
+        left: 0;
+    }
+}
+
+
+h1 {
+    color: rgb(5, 155, 255);
+}
+
+h2 {
+    color: rgb(73, 210, 255);
+    margin-top: 7.5%;
+}
+
+h3 {
+    color: rgb(96, 206, 243);
+}
+
+h4 {
+    color: rgb(149, 221, 245);
+}
+
+a {
+    color: rgb(0, 136, 255);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+p {
+    padding: 0 6%;
+}
+ul {
+    padding: 0 10%;
+
+}
+.quote {
+    height: auto;
+    padding: 2%;
+    width: 76%;
+    background: rgb(12, 12, 12);
+    margin-left: 10%;
+    background: rgb(194, 194, 194);
+    margin-left: 10%;
+    color: #000;
+    border-radius: 4px;
+}
+
+.comment {
+    text-align: center;
+    color: rgb(220, 220, 220);
+    width: 60%;
+    margin-left: 20%;
+    padding-left: 0;
+    padding-bottom:  2.5%;
+}

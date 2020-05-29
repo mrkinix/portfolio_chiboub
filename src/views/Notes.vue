@@ -10,7 +10,7 @@
                 <div class="btn--container" v-if="subMode">
                     <router-link class="btn"
                          v-for="(categ, index) in categories.sort()"
-                        :key="categ.id"  :to="`notes/${categ}`" v-once>
+                        :key="categ.id"  :to="`notes/${categ}`">
                             {{categ}} 
                             <br>{{count[index] ? '(' + count[index] + ')' : '' }}
                     </router-link>

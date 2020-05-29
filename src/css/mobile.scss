@@ -94,9 +94,20 @@
     .projects__container {
         div {
             width: 100vw !important;
-            height: 100vw !important;
+            height: auto !important;
+            padding-bottom: 1rem !important;
             max-width: unset !important;
             max-height: unset !important;
+        }
+    }
+    .container--flex {
+        flex-direction: column !important;
+        p, img {
+            width: 80% !important;
+        }
+        img {
+            margin-left: 10% !important;
+            margin-top: 5% !important;
         }
     }
     .cont {

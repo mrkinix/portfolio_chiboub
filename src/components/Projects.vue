@@ -5,23 +5,86 @@
     <h2>I enjoy creating stuff in my free time</h2>
 
     <div class="projects__container">
-      <div @click="openUrl">
-        <img :src="require('@/assets/doom.jpg')" >
-        <h4 class="txt" >Doom's hero: Guitar hero like game using vuejs.</h4>
+      <div class="cont--proj">
+        <h4 class="txt" >Doom's hero</h4>
+        <div class="container--flex">
+          <p>
+            A guitar hero alike game featuring the song: Rip and Tear by Doom.
+            <br>This game was a big challenge because I had to get the right timing for each
+            note, I learned through it that even 25ms does matter.
+            <br>
+            <br>
+            <a href="https://github.com/mrkinix/Dooms-Hero">Source code</a>
+          {{' | '}}<a href="https://dooms-hero.web.app/">Demo</a>
+            <br>
+            <br>
+              <img style="width: auto !important" :src="require('@/assets/logos/vue.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/html.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/js.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/sass.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/firebase.png')">
+          </p>
+          <img :src="require('@/assets/doomsHero.png')">
+        </div>
       </div>
-      <div><h4 class="txt">Coming soon</h4></div>
-      <div><h4 class="txt">Coming soon</h4></div>
+      <!-- -->
+      <div class="cont--proj">
+        <h4 class="txt" >Snake Machine learning</h4>
+        <div class="container--flex">
+          <p>
+            In the beginning, I created a snake game using vue js, then
+            I wanted to implement some machine learning to it. But since
+            I didn't have enough understanding of the subject yet, it didn't
+            work. I'll try to improve the algorithm once I study ML better.
+            <br>
+            <br>
+            <a href="https://github.com/mrkinix/snakeML/tree/master/src">Source code</a>
+          {{' | '}}<a href="https://snakeml-64cfd.firebaseapp.com">Demo</a>
+            <br>
+            <br>
+              <img style="width: auto !important" :src="require('@/assets/logos/vue.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/html.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/js.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/css.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/firebase.png')">
+          </p>
+          <img :src="require('@/assets/snakeML.png')">
+        </div>
+      </div>
+      <!-- -->
+      <div class="cont--proj">
+        <h4 class="txt" >Blog (coming soon)</h4>
+        <div class="container--flex">
+          <p>
+            Still in development. This blog has login/signin features as well
+            as commenting/liking etc... 
+            <br>
+            <br>
+            <a href="#">Source code</a>
+          {{' | '}}<a href="#">Demo</a>
+            <br>
+            <br>
+              <img style="width: auto !important" :src="require('@/assets/logos/vue.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/html.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/js.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/sass.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/node.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/mongo.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/firebase.png')">
+          </p>
+          <img :src="require('@/assets/blog.png')">
+        </div>
+      </div>
+      <!-- -->
     </div>
-
+  
     <h1 class="about">About</h1>
     <div class="line2" />
     <h2>Back again at introducing myself.</h2>
     <img :style="{opacity: opacity + .9, cursor: 'unset'}" :src="require('@/assets/station.png')">
     <h3>Hey there, I'm a 19 year-old guy from Tunisia,
       I also got a Belgian nationality. I'm currently a high school student (math major).
-      And as you guessed, I have a big passion for programming, but I also have other hobbies
-      like playing the guitar, music composition, video/image editing, lifting...
-
+      I speak French, Arabic, English, some German and programming languages.
     </h3>
   </div>
 </template>
@@ -113,37 +176,52 @@ h3 {
   max-width: 140rem;
   flex-wrap: wrap;
   justify-content: center;
-  div {
-    width: 45vw;
-    max-width: 40rem;
-    max-height: 40rem;
+  .cont--proj {
+    width: 100vw;
     margin: .5%;
     border-radius: 8px;
     margin-bottom: .5%;
-    height: 45vw;
-    background: rgb(24, 24, 24);
+    padding-bottom: 5%;
+    max-height: 40rem;
+    background: rgb(9, 15, 63);
     position: relative;
   }
 }
-img {
-  height: 100%;
+
+a {
+  color: rgb(68, 111, 255);
+  &:hover {
+  color: rgb(106, 146, 255);
+  }
+}
+
+.container--flex {
+  height: auto;
   width: 100%;
-  border-radius: 8px;
-  opacity: .7;
-  cursor: pointer;
-  position: relative;
-  object-fit: cover;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: row;
+  p {
+    margin-left: 10%;
+    height: 100%;
+    width: 40%;
+    img {
+      height: 2rem;
+      width: auto;
+    }
+  }
+  img {
+    margin-left: 5%;
+    height: 100%;
+    width: 35%;
+    border-radius: 8px;
+    opacity: .7;
+    object-fit: cover;
+  }
 }
 
 .txt {
   font-size: 40px;
-  position: absolute;
-  padding: 10px;
-  cursor: pointer;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-decoration: underline;
+  padding: 0 40px;
 }
 </style>

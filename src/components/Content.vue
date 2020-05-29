@@ -1,7 +1,10 @@
 <template>
   <div class="content" id="tlc">
+    <h1 style="padding-top: 15vh;">Skills</h1>
+    <div class="line" />
+    <skills/>
     <projects :scroll="scroll"/>
-    <h1 style="padding-top: 15vh;">Timeline</h1>
+    <h1 id="timeline" style="padding-top: 15vh;">Timeline</h1>
     <div class="line" />
     <h2>How I learned programming.</h2>
     <div class="parent">
@@ -58,13 +61,15 @@
 <script>
 import $ from "jquery";
 import delay from "delay";
-import pacman from "@/components/pacman";
+import pacman from "./pacman";
+import skills from "./skills";
 import projects from "./Projects";
 
 export default {
   components: {
     pacman,
     projects,
+    skills
   },
   data() {
     return {

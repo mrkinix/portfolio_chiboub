@@ -1,6 +1,6 @@
 <template>
     <div class="note">
-      <topbar :pos="'fixed'"/>
+      <topbar :pos="'relative'"/>
       <div class="container" v-if="!$route.params.id1">
         <h1>{{$route.params.id}}</h1>
         <ul v-for="item in NOTES" :key="item.id">
@@ -63,7 +63,6 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgb(34, 34, 34);
     overflow: scroll;
     font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     background: rgb(34, 34, 34);

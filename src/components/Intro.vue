@@ -6,11 +6,12 @@
       </h1>
       <h3>Hi, I'm Hédi Chiboub, a 19 year old programmer.
         You can find more
-        about me below.
+        about me below.<br>This website is built by vue js.
       </h3>
-      <a @click="scroll('#tlc')">Timeline</a>
+      <a @click="scroll('#tlc')">Skills</a>
       - <a @click="scroll('.projects')">Projects</a>
       - <a @click="scroll('.about')">About</a>
+      - <a @click="scroll('#timeline')">Timeline</a>
     </div>
     </div>
 </template>

@@ -9,8 +9,6 @@
       <li :style="{width: linksInit[1].length + 2 + 'ch'}" @mouseover="buttonHover(1)" @mouseout="reset(1)" @click="mail">{{links[1]}}</li>
       <li :style="{width: linksInit[2].length + 2 + 'ch'}" @mouseover="buttonHover(2)" @mouseout="reset(2)">
         <router-link class="rl" to="/notes">{{links[2]}}</router-link></li>
-      <li :style="{width: linksInit[3].length + 2 + 'ch'}" @mouseover="buttonHover(3)" @mouseout="reset(3)">
-        <router-link class="rl" to="/blog">{{links[3]}}</router-link></li>
     </ul>
     <ham @dropMenu="openDrop" class="mobile" ref="hamburger"/>
     <div class="dropMenu" v-if="drop">
@@ -18,7 +16,6 @@
         <li><router-link class="rl" style="color: white" to="/gallery">{{links[0]}}</router-link></li>
         <li @click="mail">{{links[1]}}</li>
         <li><router-link class="rl" style="color: white" to="/notes">{{links[2]}}</router-link></li>
-        <li><router-link class="rl" style="color: white" to="/blog">{{links[3]}}</router-link></li>
       </ul>
       <div style="height: 100%" @click="openDrop(2)"></div>
     </div>
@@ -31,8 +28,8 @@ import ham from './hamburger.vue';
 export default {
   data() {
     return {
-      linksInit: ['Gallery', 'Contact', 'Notes', 'Blog'],
-      links: ['Gallery', 'Contact', 'Notes', 'Blog'],
+      linksInit: ['Gallery', 'Contact', 'Notes'],
+      links: ['Gallery', 'Contact', 'Notes'],
       drop: false,
       COLOR: 'red',
       PATH: ''
