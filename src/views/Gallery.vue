@@ -124,11 +124,7 @@ export default {
     .img {
         position: relative;
         height: calc(100vh - 44px);
-        background: linear-gradient(270deg, #ff5200,#f9aa00,rgb(255, 72, 0));
-        background-size: 800% 800%;
-        -webkit-animation: animated--background 24s ease infinite;
-        -moz-animation: animated--background 24s ease infinite;
-        animation: animated--background 24s ease infinite;
+        background: linear-gradient(to left, #011304, rgb(41, 41, 41));
     }
     img {
         height: 100%;

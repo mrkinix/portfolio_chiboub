@@ -1,73 +1,21 @@
 <template>
   <div class="content" id="tlc">
-    <h1 style="padding-top: 15vh;">Skills</h1>
-    <div class="line" />
-    <skills/>
     <projects :scroll="scroll"/>
-    <h1 id="timeline" style="padding-top: 15vh;">Timeline</h1>
+    <h1 id="skills" style="padding-top: 15vh;">Skills</h1>
     <div class="line" />
-    <h2>How I learned programming.</h2>
-    <div class="parent">
-      <div style="line-height: 44px">{{ state }}</div>
-    </div>
-    <div class="container">
-      <div :style="{opacity: opacity }" class="hello-world">
-        > Hello world!▮
-      </div>
-      <section :style="{ opacity: opacity }">
-        In 2017 I started learning programming.
-      </section>
-    </div>
-    <h3>Hence I learned programming basics and some C++.</h3>
-    <a>Check my guide to learn programming ></a>
-    <div class="game--region">
-      <section class="text">
-        Somewhere in 2018, I've got bored of printing stuff on a terminal so I decided to try
-        something new. And since I was passionate about 3d modelling and a huge gamer at that time,
-        I tried to develop my own games using UE4.
-      </section>
-      <button>My games</button>
-      <button class="play">Tutorials</button>
-      <pacman :start="start" />
-    </div>
-    <div class="vue">
-      <section class="text">
-        Summer 2018 was when I've discovered the world of web dev. I learned the basics of html, css,
-        git and javascript then jumped into Vue Js. And from there, I eventually expanded my
-        horizons and learned many other cool stuff. At the same time, I learned node and built some
-        apps with express and mongoose. I also learned Python and used it different times to
-        automate tasks.
-        <br/><br/><br/>
-        <a>My Node apps ></a>
-        <a>My Python apps ></a>
-        <a>My Vue apps ></a>
-        <br/><br/><br/>
-      </section>
-    </div>
-    <div class="now">
-      <section style="padding-bottom: 5vh">
-        During the Covid-19 lockdown, I got more and more free time, so I spent a good shunk of it on
-        computer science. I revisited some programming languages that I haven't used for a while
-        like C++, python etc... I learned new stuff like redis, scss, numpy, scipy, react, kotlin
-        and android development, but my main focus is still web dev.
-      </section>
-      <a class="github" href="https://github.com/mrkinix/">Check my github page for open source projects ></a>
-        <br/><br/><br/>
-    </div>
-
+    <h2>These are the languages that I've experienced with so far</h2>
+    <skills/>
   </div>
 </template>
 
 <script>
 import $ from "jquery";
 import delay from "delay";
-import pacman from "./pacman";
 import skills from "./skills";
 import projects from "./Projects";
 
 export default {
   components: {
-    pacman,
     projects,
     skills
   },

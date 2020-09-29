@@ -72,7 +72,7 @@ export default {
         this.COLOR = '#1885b8'
         break;
       case 'gallery':
-        this.COLOR = '#209209'
+        this.COLOR = '#1885b8'
         break;
     }
     this.$forceUpdate

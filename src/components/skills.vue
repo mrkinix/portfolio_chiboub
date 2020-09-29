@@ -1,46 +1,25 @@
 <template>
   <div class="skills">
       <div class="container c0">
-          <p>Level 0: From time to time I would need StackOverflow (currently mastering)</p>
+          <p>These are the languages I'm the most familiar with</p>
           <div class="flex--container">
-              <img :src="require('@/assets/logos/vue.png')">
               <img :src="require('@/assets/logos/js.png')">
-              <img :src="require('@/assets/logos/html.png')">
+              <img :src="require('@/assets/logos/python.png')">
               <img :src="require('@/assets/logos/css.png')">
-              <img :src="require('@/assets/logos/sass.png')">
               <img :src="require('@/assets/logos/node.png')">
-              <img :src="require('@/assets/logos/mongo.png')">
+              <img :src="require('@/assets/logos/vue.png')">
+              <img :src="require('@/assets/logos/sass.png')">
           </div>
       </div>
       <div class="container c1">
-          <p>Level 1: I use Google because I keep forgetting a method's name (how to push item to an array etc)</p>
+          <p>Languages that I'm comfortable with, but that I use less frequently</p>
           <div class="flex--container">
-              <img :src="require('@/assets/logos/python.png')">
-              <img :src="require('@/assets/logos/pascal.jpg')">
-              <img :src="require('@/assets/logos/typescript.png')">
               <img :src="require('@/assets/logos/c++.png')">
-          </div>
-      </div>
-      <div class="container c2">
-          <p>Level 2: I frequently use Google for help but I manage to make things work</p>
-          <div class="flex--container">
-              <img :src="require('@/assets/logos/react.png')">
               <img :src="require('@/assets/logos/kotlin.png')">
-              <img :src="require('@/assets/logos/android.png')">
-          </div>
-      </div>
-      <div class="container c3">
-          Level 3: I have somehow managed to create a Hello world app (currently learning)
-          <div class="flex--container">
-              <img :src="require('@/assets/logos/rust.png')">
+              <img :src="require('@/assets/logos/react.png')">
+              <img :src="require('@/assets/logos/pascal.jpg')">
               <img :src="require('@/assets/logos/php.png')">
-              <img :src="require('@/assets/logos/laravel.png')">
           </div>
-      </div>
-      <div class="container c4">
-      I use photoshop to make my UI designs and for creating wallpapers, git for version control, github to
-      share my code, vs code as ide, c4d for 3d modelling (check gallery), Adobe illustrator for
-      logos and After effects for svg animations.
       </div>
   </div>
 </template>
@@ -66,11 +45,13 @@ export default {
 .container {
     height: auto;
     padding-bottom: 12px;
-    width: 80vw;
+    width: 40vw;
     background: rgb(143, 14, 186);
     position: relative;
+    padding-left: 20vw;
+    padding-right: 20vw;
     left: calc(75rem - 40vw);
-    max-width: 80%;
+    max-width: calc(80% - 40vw);
     border-radius: 12px;
     margin-bottom: 20px;
     padding-top: 12px;
@@ -117,7 +98,7 @@ ul {
     justify-content: space-around;
     img {
         height: 50%;
-        max-height: 100px;
+        max-height: 50px;
         width: auto;
     }
 }

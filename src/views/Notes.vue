@@ -9,17 +9,17 @@
                 <h1>Categories A-Z</h1>
                 <div class="btn--container" v-if="subMode">
                     <router-link class="btn"
-                         v-for="(categ, index) in categories.sort()"
+                         v-for="(categ, idx) in items.sort()"
                         :key="categ.id"  :to="`notes/${categ}`">
                             {{categ}} 
-                            <br>{{count[index] ? '(' + count[index] + ')' : '' }}
+                            <br>{{count_(idx)}}
                     </router-link>
                 </div>
                 <div class="btn--container" v-else>
-                    <div class="btn" v-for="(categ, index) in categories.sort()"
-                    :key="categ.id" @click="swCtg(categ)" v-once>
+                    <div class="btn" v-for="(categ, idx) in items.sort()"
+                    :key="categ.id" @click="swCtg(categ)">
                         {{categ}} 
-                        <br>{{count[index] ? '(' + count[index] + ')' : '' }}
+                        <br>{{count_(idx)}}
                     </div>
                 </div>
             </div>
@@ -47,31 +47,45 @@ export default {
     },
     data() {
         return {
-            categories: [''],
             subMode: false,
-            count: [],
             subCount: [],
-            NOTES: NOTES
+            NOTES: NOTES,
+            categ: ''
         }
     },
     methods: {
         swCtg: function(categ) {
-            if (!this.subMode) this.categories = SUBCATEGS[categ]
+            this.categ = categ
             this.subMode = true
-            this.countNotes('subCategory')
         },
         reset: function () {
-            this.categories = ['Programming', 'Frameworks', 'CS',
-            'History', 'Science', 'Maths', 'Software', 'Economics', 'Language', 'Music', 'Guitar']
             this.subMode = false
-            this.countNotes('category')
         },
         countNotes: function(type) {
-            for (let i=0; i<this.categories.length;++i) this.count[i] = 0
+            const list = this.items
+            let count = []
+            for (let i=0; i<list.length;++i) count[i] = 0
             for (let item of NOTES) {
-                this.count[this.categories.sort().indexOf(item[type])] += 1
+                count[list.sort().indexOf(item[type])] += 1
             }
+            return count.map((item) => {
+                if (item === 0) return ''
+                else return `(${item})`
+            })
+        },
+        count_: function(index) {
+            if (this.subMode) return this.countNotes('subCategory')[index]
+            return this.countNotes('category')[index]
         }
+    },
+    computed: {
+        items: function() {
+            if (this.subMode) {
+                return SUBCATEGS[this.categ]
+            }
+            return ['Programming', 'Frameworks',
+            'Software']
+        },
     },
     created() {
         this.reset()

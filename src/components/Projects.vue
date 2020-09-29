@@ -11,7 +11,7 @@
           <p>
             A guitar hero alike game featuring the song: Rip and Tear by Doom.
             <br>This game was a big challenge because I had to get the right timing for each
-            note, I learned through it that even 25ms does matter.
+            note, I learned through it that even 25ms does matter. (Doesn't support mobile yet)
             <br>
             <br>
             <a href="https://github.com/mrkinix/Dooms-Hero">Source code</a>
@@ -53,6 +53,54 @@
       </div>
       <!-- -->
       <div class="cont--proj">
+        <h4 class="txt" >This portfolio</h4>
+        <div class="container--flex">
+          <p>
+            In this website, I focused on implementing a responsive design, try zoom in and out.
+            Try it on different screen sizes, it adapts to the scree.
+            I also tried to improve my UI/UX design skills, so I applied some principles I've learned.
+            <br>
+            <br>
+            <a href="https://github.com/mrkinix/portfolio_chiboub">Source code</a>
+          {{' | '}}<a href="#">Demo</a>
+            <br>
+            <br>
+              <img style="width: auto !important" :src="require('@/assets/logos/vue.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/html.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/js.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/css.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/firebase.png')">
+          </p>
+          <img :src="require('@/assets/portfolio.png')">
+        </div>
+      </div>
+      <!-- -->
+      <!-- -->
+      <div class="cont--proj">
+        <h4 class="txt" >Short animated scene</h4>
+        <div class="container--flex">
+          <p>
+            I have recently discovered bodymovin: an after effect plug in
+            that exports your animation to svg, it has many limitations
+            but it's very useful and effective.
+            <br>
+            <br>
+            <a href="https://github.com/mrkinix/goAnimation">Source code</a>
+          {{' | '}}<a href="https://golang-chbb.firebaseapp.com/">Demo</a>
+            <br>
+            <br>
+              <img style="width: auto !important" :src="require('@/assets/logos/vue.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/html.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/js.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/css.png')">
+              <img style="width: auto !important; border-radius: 0" :src="require('@/assets/logos/ae.png')">
+              <img style="width: auto !important" :src="require('@/assets/logos/firebase.png')">
+          </p>
+          <img :src="require('@/assets/goAnim.png')">
+        </div>
+      </div>
+      <!-- -->
+      <div class="cont--proj">
         <h4 class="txt" >Blog (coming soon)</h4>
         <div class="container--flex">
           <p>
@@ -83,8 +131,9 @@
     <h2>Back again at introducing myself.</h2>
     <img :style="{opacity: opacity + .9, cursor: 'unset'}" :src="require('@/assets/station.png')">
     <h3>Hey there, I'm a 19 year-old guy from Tunisia,
-      I also got a Belgian nationality. I'm currently a high school student (math major).
-      I speak French, Arabic, English, some German and programming languages.
+      I also got a Belgian nationality. Currentlu living in Brussels.
+      I'm in my first year of computer science bachelor in ULB.
+      I speak French and English.
     </h3>
   </div>
 </template>
